@@ -27,9 +27,9 @@
 ## 로컬환경 테스트 - 배포된 Google Cloud Functions 테스트 (PUS/SUB 발행후 트리거 방식)
 
 ### report 함수 테스트 (업체 지정 발송)
- - ex1) 업체 : id지정, 일자 : 특정일자 리포트, 메일수신자 직접지정 발송 : Hong.gildong@yhsbearing.com    
+ - ex1) 업체 : id지정, 일자 : 특정일자 리포트, 메일수신자 직접지정 발송 : Hong.gildong@gmail.com    
     ``` 
-    gcloud pubsub topics publish gcf_report_trigger --message '{"ent_id": "1", "report_date":"2023-03-16", "recv_email_addr":"Hong.gildong@yhsbearing.com"}'
+    gcloud pubsub topics publish gcf_report_trigger --message '{"ent_id": "1", "report_date":"2023-03-16", "recv_email_addr":"Hong.gildong@gmail.com"}'
     ```  
  - ex2) 업체 : id지정, 일자 : 특정일자 리포트, **DB등록된 메일수신자** 모두에게 발송
     ```
@@ -47,7 +47,7 @@
     ```    
  - ex2) 모든 업체 대상으로 특정일자 발송(스케줄러에서 실행) + 특정 메일주소로만 발송
     ```
-    gcloud pubsub topics publish gcf_call_report_trigger --message '{"report_date":"2023-03-15", "only_receive_email":"Hong.gildong@yhsbearing.com"}'
+    gcloud pubsub topics publish gcf_call_report_trigger --message '{"report_date":"2023-03-15", "only_receive_email":"Hong.gildong@gmail.com"}'
     ```
  - ex3) 모든 업체 대상으로 전일자 리포트 발송(cloud 스케줄러에 사용하는 방법)
     ```
